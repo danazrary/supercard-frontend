@@ -1,0 +1,27 @@
+/**
+ * ============================================================================
+ * File: src/styles/main.scss
+ * Description: Master Sass manifest compiling all architectural styling layers.
+ * Usage / Imported By: src/index.jsx.
+ * ============================================================================
+ */
+// 1. Abstracts (Tokens & Mixins must come first)
+@use './abstracts/variables' as *;
+@use './abstracts/breakpoints' as *;
+@use './abstracts/mixins' as *;
+/* 
+@use "./abstracts/breakpoints";
+@use "./abstracts/mixins"; */
+
+@use "./base/reset";
+@use "./base/typography";
+@use "./base/animations";
+
+@use "./components/button";
+@use "./components/badge";
+@use "./components/modal";
+@use "./components/qr-scanner";
+
+@use "./layout/header";
+@use "./layout/navigation";
+@use "./layout/footer";

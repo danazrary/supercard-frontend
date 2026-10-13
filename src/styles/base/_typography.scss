@@ -1,0 +1,30 @@
+/**
+ * ============================================================================
+ * File: src/styles/base/_typography.scss
+ * Description: RTL Sorani Kurdish and Arabic typography weights and rhythm.
+ * Usage / Imported By: main.scss.
+ * ============================================================================
+ */
+
+@use "../abstracts/variables.scss" as *;
+[dir="rtl"] {
+  font-family:
+    "Noto Naskh Arabic", "Kurdish Font", "Segoe UI", Tahoma, sans-serif;
+  letter-spacing: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  color: $color-text-main;
+  line-height: 1.3;
+}
+
+p {
+  line-height: 1.6;
+  color: $color-text-secondary;
+}

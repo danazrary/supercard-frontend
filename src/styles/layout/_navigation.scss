@@ -1,0 +1,182 @@
+/**
+ * ============================================================================
+ * File: src/styles/layout/_navigation.scss
+ * Description: Floating bottom dock with physics-based spring hover,
+ *              ambient pulse waves, and neon active pills.
+ * ============================================================================
+ */
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.bottom-nav {
+  position: fixed;
+  bottom: $spacing-md;
+  left: 0;
+  right: 0;
+  z-index: $z-index-bottom-nav;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  padding: 0 $spacing-md;
+
+  @media (min-width: $breakpoint-md) {
+    display: none; // Uses top Header navigation on desktop
+  }
+
+  &__dock {
+    pointer-events: auto;
+    width: 100%;
+    max-width: $nav-bar-max-width;
+    height: $nav-bar-height;
+    @include glassmorphism(0.88, $blur-xl);
+    border-radius: $radius-full;
+    border: 1px solid rgba($color-white, 0.12);
+    @include flex-between;
+    padding: 0 $spacing-lg;
+    box-shadow: $shadow-elevation-card;
+    position: relative;
+  }
+
+  // --- Individual Tab Item ---
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: $color-text-secondary;
+    gap: 3px;
+    padding: 6px 12px;
+    border-radius: $radius-lg;
+    transition: all $transition-normal cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    &:hover {
+      color: $color-text-primary;
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: scale(0.92);
+    }
+
+    &--active {
+      color: $color-gold-primary;
+
+      .bottom-nav__icon-wrapper {
+        transform: translateY(-2px) scale(1.1);
+        filter: drop-shadow(0 0 8px rgba($color-gold-primary, 0.6));
+      }
+
+      .bottom-nav__label {
+        font-weight: $font-weight-bold;
+        color: $color-gold-primary;
+      }
+    }
+  }
+
+  &__icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform $transition-fast ease, filter $transition-fast ease;
+  }
+
+  &__label {
+    font-size: 0.72rem;
+    transition: color $transition-fast ease;
+  }
+
+  &__glow-pill {
+    position: absolute;
+    bottom: -6px;
+    width: 14px;
+    height: 3px;
+    border-radius: $radius-full;
+    background: $color-gold-primary;
+    box-shadow: 0 0 10px $color-gold-primary;
+    animation: fade-in-scale 0.25s ease-out forwards;
+  }
+
+  // --- Floating Center CTA Button ---
+  &__action-wrapper {
+    position: relative;
+    top: -18px;
+    @include flex-center;
+  }
+
+  &__action-btn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, $color-gold-light 0%, $color-gold-primary 70%, $color-gold-dark 100%);
+    color: $color-bg-primary;
+    border: 2px solid rgba($color-white, 0.35);
+    padding: 10px 18px;
+    border-radius: $radius-full;
+    cursor: pointer;
+    box-shadow: $shadow-gold-action-btn;
+    overflow: hidden;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: all $transition-normal cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    &:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: $shadow-gold-btn-hover;
+    }
+
+    &:active {
+      transform: translateY(-1px) scale(0.96);
+    }
+  }
+
+  &__action-pulse {
+    position: absolute;
+    inset: -4px;
+    border-radius: $radius-full;
+    border: 2px solid $color-gold-primary;
+    opacity: 0.8;
+    animation: pulse-ring 2.5s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+    pointer-events: none;
+  }
+
+  &__action-shine {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba($color-white, 0.4) 50%,
+      transparent 70%
+    );
+    transform: rotate(45deg);
+    animation: shine-sweep 3s infinite linear;
+  }
+
+  &__action-icon {
+    font-size: 1.15rem;
+    line-height: 1;
+    z-index: 1;
+  }
+
+  &__action-text {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    z-index: 1;
+    white-space: nowrap;
+  }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 0.9; }
+  70% { transform: scale(1.35); opacity: 0; }
+  100% { transform: scale(1.4); opacity: 0; }
+}

@@ -1,0 +1,44 @@
+/**
+ * ============================================================================
+ * File: src/styles/components/_badge.scss
+ * Description: VIP and category pill badges.
+ * Usage / Imported By: Badge.jsx.
+ * ============================================================================
+ */
+
+@use "../abstracts/variables.scss" as *;
+@use "../abstracts/mixins";
+
+.super-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: $border-radius-pill;
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  &--gold {
+    background: rgba($color-gold-primary, 0.15);
+    color: $color-gold-primary;
+    border: 1px solid rgba($color-gold-primary, 0.4);
+  }
+
+  &--cyan {
+    background: rgba($color-cyan-accent, 0.15);
+    color: $color-cyan-accent;
+    border: 1px solid rgba($color-cyan-accent, 0.4);
+  }
+
+  &--success {
+    background: rgba($color-success, 0.15);
+    color: $color-success;
+    border: 1px solid rgba($color-success, 0.4);
+  }
+
+  &--danger {
+    background: rgba($color-danger, 0.15);
+    color: $color-danger;
+    border: 1px solid rgba($color-danger, 0.4);
+  }
+}

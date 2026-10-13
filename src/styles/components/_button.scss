@@ -1,0 +1,68 @@
+/**
+ * ============================================================================
+ * File: src/styles/components/_button.scss
+ * Description: Luxury gold buttons, cyan outlines, and disabled button styles.
+ * Usage / Imported By: Button.jsx.
+ * ============================================================================
+ */
+
+@use "../abstracts/variables.scss" as *;
+
+@use "../abstracts/mixins" as *;
+.super-btn {
+  @include flex-center;
+  gap: $spacing-xs;
+  padding: 12px 24px;
+  border-radius: $border-radius-pill;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  transition: all $transition-normal ease;
+  -webkit-user-select: none;
+  user-select: none;
+
+  &--gold {
+    background: linear-gradient(
+      135deg,
+      $color-gold-light 0%,
+      $color-gold-primary 100%
+    );
+    color: $color-bg-deep;
+    box-shadow: 0 4px 15px rgba($color-gold-primary, 0.35);
+
+    &:hover:not(:disabled) {
+      box-shadow: 0 6px 25px rgba($color-gold-primary, 0.6);
+      transform: translateY(-2px);
+    }
+  }
+
+  &--cyan {
+    background: transparent;
+    color: $color-cyan-accent;
+    border: 1px solid $color-cyan-accent;
+
+    &:hover:not(:disabled) {
+      background: rgba($color-cyan-accent, 0.15);
+      box-shadow: 0 0 15px rgba($color-cyan-accent, 0.4);
+    }
+  }
+
+  &--danger {
+    background: $color-danger;
+    color: $color-white;
+
+    &:hover:not(:disabled) {
+      opacity: 0.9;
+    }
+  }
+
+  &--full-width {
+    width: 100%;
+  }
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+}

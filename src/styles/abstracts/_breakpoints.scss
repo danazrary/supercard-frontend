@@ -1,0 +1,19 @@
+/**
+ * ============================================================================
+ * File: src/styles/abstracts/_breakpoints.scss
+ * Description: Mobile-first responsive breakpoint mixins (sm, md, lg, xl).
+ * Usage / Imported By: Layout & component stylesheets.
+ * ============================================================================
+ */
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == 'sm' {
+    @media (min-width: 576px) { @content; }
+  } @else if $breakpoint == 'md' {
+    @media (min-width: 768px) { @content; }
+  } @else if $breakpoint == 'lg' {
+    @media (min-width: 992px) { @content; }
+  } @else if $breakpoint == 'xl' {
+    @media (min-width: 1200px) { @content; }
+  }
+}

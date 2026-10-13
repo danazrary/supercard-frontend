@@ -1,0 +1,97 @@
+@use '../styles//abstracts/_variables' as *;
+
+.sc-home-page {
+  min-height: 100vh;
+  background: $color-bg-primary;
+  color: $color-text-primary;
+  font-family: 'Noto Sans Arabic', 'Rabar', 'Vazirmatn', system-ui, sans-serif;
+  padding-bottom: 7rem;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__section-title {
+    font-size: $font-size-xl;
+    font-weight: 800;
+    color: $color-text-primary;
+    padding: 0 1.25rem;
+    margin: 0 0 1rem;
+    max-width: $breakpoint-md;
+    margin-inline: auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  &__offers {
+    padding: 1rem 0 2rem;
+  }
+
+  &__offers-scroll {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 0 1.25rem 0.5rem;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    max-width: $breakpoint-lg;
+    margin: 0 auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba($color-bg-primary, 0.75);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+
+  &__modal {
+    background: $color-bg-card;
+    border: 1px solid $color-border-gold;
+    border-radius: $radius-lg;
+    padding: 1.5rem;
+    max-width: 22rem;
+    width: 100%;
+    text-align: center;
+
+    h3 {
+      font-size: $font-size-lg;
+      font-weight: 800;
+      color: $color-gold-light;
+      margin: 0 0 0.75rem;
+    }
+
+    p {
+      font-size: $font-size-sm;
+      color: $color-text-secondary;
+      line-height: 1.6;
+      margin: 0 0 1.25rem;
+    }
+
+    button {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border: none;
+      background: $color-gold-gradient;
+      color: $color-text-dark;
+      font-weight: 700;
+      font-size: $font-size-sm;
+      padding: 0.65rem 1.5rem;
+      border-radius: $radius-md;
+      cursor: pointer;
+    }
+  }
+}

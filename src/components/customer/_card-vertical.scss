@@ -1,0 +1,160 @@
+@use '../../styles/abstracts/variables' as *;
+
+.sc-offer-card {
+  position: relative;
+  width: 100%;
+  max-width: 19rem;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  background: $color-bg-card;
+  border: 1px solid $color-border-subtle;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+
+  &__media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: $aspect-ratio-story;
+    background-color: $color-bg-card-subtle;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &__gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba($color-bg-primary, 0.95) 0%,
+      rgba($color-bg-primary, 0.55) 45%,
+      rgba($color-bg-primary, 0.1) 75%,
+      rgba($color-bg-primary, 0.35) 100%
+    );
+  }
+
+  &__badges {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    right: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    z-index: 2;
+  }
+
+  &__badge {
+    font-size: $font-size-xs;
+    font-weight: 700;
+    padding: 0.3rem 0.65rem;
+    border-radius: $radius-full;
+    white-space: nowrap;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    &--category {
+      background: rgba($color-bg-card, 0.85);
+      color: $color-text-secondary;
+      border: 1px solid $color-border-subtle;
+    }
+
+    &--highlight {
+      background: rgba($color-accent-cyan, 0.15);
+      color: $color-accent-cyan;
+      border: 1px solid $color-border-cyan;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    padding: 1rem 0.9rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  &__title {
+    font-size: $font-size-lg;
+    font-weight: 800;
+    color: $color-text-primary;
+    text-align: center;
+    margin: 0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  }
+
+  &__pills {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: $font-size-xs;
+    font-weight: 600;
+    padding: 0.3rem 0.6rem;
+    border-radius: $radius-full;
+    background: rgba($color-bg-card, 0.85);
+    color: $color-text-secondary;
+    border: 1px solid $color-border-subtle;
+
+    &--included {
+      color: $color-accent-cyan;
+      border-color: $color-border-cyan;
+      background: rgba($color-accent-cyan, 0.1);
+    }
+  }
+
+  &__checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: rgba($color-bg-primary, 0.5);
+    border-radius: $radius-sm;
+    padding: 0.6rem 0.75rem;
+  }
+
+  &__checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: $font-size-xs;
+    color: $color-text-secondary;
+  }
+
+  &__checklist-dot {
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: $radius-full;
+    background: $color-accent-cyan;
+    flex-shrink: 0;
+  }
+
+  &__detail-btn {
+    appearance: none;
+    border: 1px solid $color-border-gold;
+    background: rgba($color-gold-primary, 0.1);
+    color: $color-gold-light;
+    font-size: $font-size-sm;
+    font-weight: 700;
+    padding: 0.6rem 1rem;
+    border-radius: $radius-md;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      background: $color-gold-gradient;
+      color: $color-text-dark;
+    }
+  }
+}

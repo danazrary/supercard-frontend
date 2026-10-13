@@ -1,0 +1,46 @@
+/**
+ * ============================================================================
+ * File: src/styles/components/_qr-scanner.scss
+ * Description: Viewfinder frame, scanline laser, and camera canvas for clinics.
+ * Usage / Imported By: QRScannerCamera.jsx.
+ * ============================================================================
+ */
+
+@use "../abstracts/variables.scss" as *;
+@use "../abstracts/mixins";
+
+.qr-scanner-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  height: 380px;
+  margin: 0 auto;
+  border-radius: $border-radius-xl;
+  overflow: hidden;
+  background: #000;
+  @include gold-glow-border;
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .qr-viewfinder {
+    position: absolute;
+    inset: 30px;
+    border: 2px dashed $color-cyan-accent;
+    border-radius: $border-radius-lg;
+    pointer-events: none;
+  }
+
+  .scanline-laser {
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    height: 3px;
+    background: $color-cyan-accent;
+    box-shadow: 0 0 12px $color-cyan-accent;
+    animation: scanline-laser 2s infinite ease-in-out;
+  }
+}

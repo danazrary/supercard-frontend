@@ -1,0 +1,46 @@
+/**
+ * ============================================================================
+ * File: src/styles/components/_modal.scss
+ * Description: Glassmorphic backdrop overlay and animated modal dialog boxes.
+ * Usage / Imported By: Modal.jsx.
+ * ============================================================================
+ */
+
+@use "../abstracts/variables.scss" as *;
+@use "../abstracts/mixins";
+
+.super-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba($color-bg-deep, 0.85);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  @include flex-center;
+  padding: $spacing-md;
+}
+
+.super-modal-content {
+  @include glassmorphism(0.9, 20px);
+  width: 100%;
+  max-width: 480px;
+  border-radius: $border-radius-xl;
+  padding: $spacing-lg;
+  animation: fade-in-scale 0.25s ease-out forwards;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+
+  &__close {
+    position: absolute;
+    top: 16px;
+    inset-inline-end: 16px;
+    background: transparent;
+    border: none;
+    color: $color-text-secondary;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-white;
+    }
+  }
+}

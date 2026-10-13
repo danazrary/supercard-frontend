@@ -1,0 +1,81 @@
+{
+  "app": {
+    "title": "Super Card",
+    "tagline": "Erbil's Premier VIP Subscription & Guaranteed Instant Prize Card",
+    "currency": "IQD",
+    "vip_status": "Gold VIP Member",
+    "rights_reserved": "All Rights Reserved to Super Card"
+  },
+  "nav": {
+    "home": "Home",
+    "profile": "My Card",
+    "offers": "Offers",
+    "settings": "Settings",
+    "buy_card_btn": "Buy Super Card"
+  },
+  "auth": {
+    "login_title": "Customer Login",
+    "phone_label": "Mobile Number",
+    "phone_placeholder": "0750 XXX XXXX",
+    "phone_helper": "A 6-digit verification code will be sent via SMS",
+    "send_otp": "Send Verification Code",
+    "otp_title": "Enter 6-Digit OTP",
+    "otp_sent_to": "Code sent to",
+    "verify_btn": "Verify & Login",
+    "resend_btn": "Resend Code",
+    "resend_in": "Resend in",
+    "invalid_phone": "Please enter a valid Iraqi mobile number (Korek, Zain, Asiacell)",
+    "invalid_otp": "OTP code must be exactly 6 digits"
+  },
+  "fib": {
+    "modal_title": "Pay with First Iraqi Bank (FIB)",
+    "scan_instructions": "Open your FIB mobile app and scan this QR code to purchase your card for 25,000 IQD",
+    "open_app_btn": "Open directly in FIB App",
+    "waiting_payment": "Awaiting instant payment confirmation from FIB...",
+    "expires_in": "Invoice expires in:",
+    "price_iqd": "25,000 IQD",
+    "copy_link": "Copy Payment Link",
+    "link_copied": "Payment link copied!",
+    "status_paid": "Payment received successfully!",
+    "status_failed": "Payment was declined or expired. Please try again."
+  },
+  "lottery": {
+    "box_title": "C-BOX Luxury Instant Lottery",
+    "box_subtitle": "Every card includes a 100% guaranteed luxury instant prize reveal!",
+    "claim_btn": "Open the Box!",
+    "shaking_text": "Preparing the luxury gold chest...",
+    "opening_text": "Congratulations! Revealing your prize...",
+    "won_title": "Congratulations! You Won:",
+    "congratulations": "This guaranteed reward has been locked into your digital wallet",
+    "claim_reward_btn": "Claim Reward",
+    "already_opened": "This mystery box has already been opened"
+  },
+  "merchant": {
+    "login_title": "Partner Clinic & Center Portal",
+    "username": "Center Username",
+    "password": "Password",
+    "login_btn": "Secure Sign In",
+    "scanner_title": "Super Card Scanner",
+    "camera_permission": "Camera permission is required to scan VIP customer cards",
+    "align_qr": "Align customer QR code inside the viewfinder",
+    "manual_input": "Or enter code manually",
+    "status_available": "FREE PERK AVAILABLE (Not Redeemed)",
+    "status_redeemed": "OFFER ALREADY REDEEMED BY THIS CUSTOMER!",
+    "customer_name": "Customer Name:",
+    "phone": "Phone:",
+    "confirm_redemption": "Confirm Redemption (Mark as Used)",
+    "cancel_redemption": "Cancel / Not Used",
+    "success_redeemed": "Perk successfully verified and marked as redeemed"
+  },
+  "admin": {
+    "dashboard_title": "Super Card Administrative Suite",
+    "tab_offers": "Offers CMS (9:16)",
+    "tab_centers": "Clinics & Centers",
+    "tab_prizes": "C-BOX Prize Engine",
+    "add_offer": "Create New Offer",
+    "active": "Active",
+    "inactive": "Inactive",
+    "save": "Save Changes",
+    "delete": "Delete"
+  }
+}

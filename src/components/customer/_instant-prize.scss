@@ -1,0 +1,107 @@
+@use '../../styles/abstracts/variables' as *;
+
+.sc-prize {
+  padding: 0 1.25rem 2rem;
+  max-width: $breakpoint-md;
+  margin: 0 auto;
+
+  &__card {
+    position: relative;
+    background: linear-gradient(165deg, $color-bg-card 0%, $color-bg-secondary 100%);
+    border: 1px solid $color-border-gold;
+    border-radius: $radius-lg;
+    padding: 1.5rem 1.25rem;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% -10%, rgba($color-gold-primary, 0.15), transparent 60%);
+      pointer-events: none;
+    }
+  }
+
+  &__badge {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: $color-gold-gradient;
+    color: $color-text-dark;
+    font-weight: 800;
+    font-size: $font-size-sm;
+    padding: 0.4rem 0.9rem;
+    border-radius: $radius-full;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 20px rgba($color-gold-primary, 0.4);
+  }
+
+  &__headline {
+    position: relative;
+    font-size: $font-size-md;
+    line-height: 1.6;
+    font-weight: 700;
+    color: $color-text-primary;
+    margin: 0 0 1.5rem;
+  }
+
+  &__icons {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding: 0.9rem 0.5rem;
+    background: rgba($color-bg-primary, 0.5);
+    border: 1px solid $color-border-subtle;
+    border-radius: $radius-md;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: $radius-md;
+    color: $color-accent-cyan;
+    background: rgba($color-accent-cyan, 0.08);
+    flex-shrink: 0;
+  }
+
+  &__luxury-box {
+    position: relative;
+    background: linear-gradient(145deg, #1a1208 0%, #0b1522 70%);
+    border: 1px solid $color-border-gold;
+    border-radius: $radius-md;
+    padding: 1.25rem 1rem;
+    text-align: center;
+  }
+
+  &__luxury-badge {
+    display: inline-block;
+    background: $color-gold-gradient;
+    color: $color-text-dark;
+    font-size: $font-size-xs;
+    font-weight: 800;
+    padding: 0.3rem 0.75rem;
+    border-radius: $radius-full;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.03em;
+  }
+
+  &__luxury-label {
+    font-size: $font-size-sm;
+    font-weight: 700;
+    color: $color-gold-light;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+  }
+
+  &__luxury-text {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    margin: 0;
+  }
+}

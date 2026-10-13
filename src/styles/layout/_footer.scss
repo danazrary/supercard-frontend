@@ -1,0 +1,166 @@
+/**
+ * ============================================================================
+ * File: src/styles/layout/_footer.scss
+ * Description: Luxury dark layout for footer with responsive multi-column grid,
+ *              hover neon glows for socials, and link animations.
+ * ============================================================================
+ */
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.super-footer {
+  width: 100%;
+  background: $color-bg-secondary;
+  border-top: 1px solid $color-border-subtle;
+  padding: $spacing-2xl $spacing-lg calc(#{$nav-bar-height} + #{$spacing-xl}); // Extra padding for mobile bottom bar
+  position: relative;
+  z-index: 10;
+
+  @media (min-width: $breakpoint-md) {
+    padding-bottom: $spacing-2xl;
+  }
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+    text-align: center;
+
+    @media (min-width: $breakpoint-md) {
+      grid-template-columns: 1.2fr 1.2fr 1fr;
+      text-align: right;
+    }
+  }
+
+  // --- Left: Brand & Copyright ---
+  &__copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-xs;
+
+    @media (min-width: $breakpoint-md) {
+      align-items: flex-start;
+    }
+  }
+
+  &__brand-title {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    font-size: $font-size-lg;
+    font-weight: 800;
+    color: $color-gold-primary;
+  }
+
+  &__badge {
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: $radius-full;
+    background: rgba($color-gold-primary, 0.15);
+    border: 1px solid rgba($color-gold-primary, 0.4);
+    color: $color-gold-primary;
+  }
+
+  &__copy-text {
+    font-size: $font-size-xs;
+    color: $color-text-secondary;
+    margin-top: $spacing-xs;
+  }
+
+  &__location {
+    font-size: 0.75rem;
+    color: $color-text-muted;
+  }
+
+  // --- Middle: Navigation Links ---
+  &__nav-group {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+
+  &__nav-title {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  &__nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $spacing-sm $spacing-md;
+
+    @media (min-width: $breakpoint-md) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__link {
+    font-size: $font-size-xs;
+    color: $color-text-secondary;
+    text-decoration: none;
+    transition: all $transition-fast ease;
+    padding: 4px 8px;
+    border-radius: $radius-sm;
+
+    &:hover {
+      color: $color-accent-cyan;
+      background: rgba($color-accent-cyan, 0.08);
+      transform: translateX(-2px);
+    }
+  }
+
+  // --- Right: Clickable Social Media Outlets ---
+  &__socials-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-sm;
+
+    @media (min-width: $breakpoint-md) {
+      align-items: flex-start;
+    }
+  }
+
+  &__social-icons {
+    display: flex;
+    gap: $spacing-sm;
+  }
+
+  &__social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: $radius-full;
+    background: rgba($color-white, 0.04);
+    border: 1px solid rgba($color-white, 0.1);
+    color: $color-text-secondary;
+    @include flex-center;
+    text-decoration: none;
+    transition: all $transition-normal cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    &:hover {
+      color: var(--social-color);
+      border-color: var(--social-color);
+      box-shadow: 0 0 15px var(--social-color);
+      transform: translateY(-4px) scale(1.1);
+      background: rgba($color-bg-primary, 0.8);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  &__support-phone {
+    font-size: 0.75rem;
+    color: $color-text-muted;
+    direction: ltr;
+  }
+}

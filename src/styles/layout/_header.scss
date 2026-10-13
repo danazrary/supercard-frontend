@@ -1,0 +1,184 @@
+/**
+ * ============================================================================
+ * File: src/styles/layout/_header.scss
+ * Description: Luxury glassmorphism, glowing badges, and animated tabs for Header.
+ * ============================================================================
+ */
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.super-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: $z-index-sticky;
+  @include glassmorphism(0.85, $blur-lg);
+  border-bottom: 1px solid $color-border-subtle;
+  transition: all $transition-normal ease;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: $spacing-sm $spacing-lg;
+    @include flex-between;
+    gap: $spacing-md;
+  }
+
+  // --- Brand Logo ---
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    text-decoration: none;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: transform $transition-fast ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  &__logo-badge {
+    width: 42px;
+    height: 42px;
+    border-radius: $radius-md;
+    background: linear-gradient(135deg, $color-brand-fib 0%, $color-gold-primary 100%);
+    box-shadow: $shadow-gold-glow;
+    @include flex-center;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba($color-white, 0.3) 50%,
+        transparent 70%
+      );
+      transform: rotate(45deg);
+      animation: shine-sweep 4s infinite linear;
+    }
+
+    span {
+      font-size: $font-size-xl;
+      font-weight: 900;
+      color: $color-white;
+      z-index: 1;
+    }
+  }
+
+  &__brand-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__brand-title {
+    font-size: $font-size-md;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    background: $color-gold-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__brand-tag {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: $color-accent-cyan;
+    text-shadow: 0 0 8px rgba($color-accent-cyan, 0.4);
+  }
+
+  // --- Center Navigation Bar ---
+  &__nav {
+    display: none;
+    align-items: center;
+    gap: $spacing-md;
+
+    @media (min-width: $breakpoint-md) {
+      display: flex;
+    }
+  }
+
+  &__nav-link {
+    position: relative;
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    color: $color-text-secondary;
+    text-decoration: none;
+    border-radius: $radius-full;
+    transition: all $transition-normal ease;
+
+    &:hover {
+      color: $color-text-primary;
+      background: rgba($color-white, 0.04);
+    }
+
+    &--active {
+      color: $color-gold-primary;
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: $radius-full;
+        background: rgba($color-gold-primary, 0.08);
+        border: 1px solid rgba($color-gold-primary, 0.25);
+      }
+    }
+  }
+
+  &__nav-indicator {
+    position: absolute;
+    bottom: -4px;
+    left: 20%;
+    right: 20%;
+    height: 3px;
+    border-radius: $radius-full;
+    background: $color-gold-primary;
+    box-shadow: $shadow-gold-pulse-sm;
+    animation: fade-in-scale 0.2s ease forwards;
+  }
+
+  // --- Right Actions & Login ---
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+  }
+
+  &__login-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-bold;
+    border-radius: $radius-full;
+    border: 1px solid $color-border-cyan;
+    background: rgba($color-accent-cyan, 0.1);
+    color: $color-accent-cyan;
+    cursor: pointer;
+    transition: all $transition-fast ease;
+
+    &:hover {
+      background: rgba($color-accent-cyan, 0.2);
+      box-shadow: $shadow-cyan-hover;
+      transform: translateY(-1px);
+    }
+  }
+}
+
+@keyframes shine-sweep {
+  0% { transform: translateY(-100%) rotate(45deg); }
+  30%, 100% { transform: translateY(150%) rotate(45deg); }
+}

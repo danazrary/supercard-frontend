@@ -1,0 +1,48 @@
+/**
+ * ============================================================================
+ * File: src/styles/base/_reset.scss
+ * Description: Modern HTML5 and mobile viewport reset rules.
+ * Usage / Imported By: main.scss.
+ * ============================================================================
+ */
+
+@use '../abstracts/variables' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  background-color: $color-bg-deep;
+  color: $color-text-main;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  outline: none;
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  outline: none;
+}

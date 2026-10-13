@@ -201,7 +201,7 @@ function AppContent() {
             }
           />
 
-          {/* ۳. بەشی بەڕێوەبەرایەتی گشتی eee(Super Admin Routes) */}
+          {/* ۳. بەشی بەڕێوەبەرایەتی گشتی (Super Admin Routes) */}
           <Route path="/admin/login" element={<MerchantLogin />} />
           <Route
             path="/admin"

@@ -4,7 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --config vite.config.http.js --mode http",
+    "dev:https": "vite --config vite.config.https.js --mode https",
+    "dev1": "vite --host",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"

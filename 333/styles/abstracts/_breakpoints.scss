@@ -1,0 +1,54 @@
+/**
+ * ============================================================================
+ * File: src/styles/abstracts/_breakpoints.scss
+ * Description: Mobile-first responsive media query mixins built on top of
+ *              the $breakpoint-* tokens defined in _variables.scss. Mobile
+ *              styles are the unprefixed default; these mixins layer on
+ *              progressively wider enhancements.
+ * Usage / Imported By: All SCSS component partials via main.scss.
+ * ============================================================================
+ */
+
+@mixin respond-xs {
+  @media (min-width: $breakpoint-xs) {
+    @content;
+  }
+}
+
+@mixin respond-sm {
+  @media (min-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin respond-md {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin respond-lg {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin respond-xl {
+  @media (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+@mixin respond-2xl {
+  @media (min-width: $breakpoint-2xl) {
+    @content;
+  }
+}
+
+// Convenience alias mirroring common "mobile-only" exceptions — e.g. hiding
+// the floating BottomNav once the layout reflows to a desktop admin shell.
+@mixin respond-below-md {
+  @media (max-width: ($breakpoint-md - 1)) {
+    @content;
+  }
+}

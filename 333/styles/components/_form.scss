@@ -1,0 +1,186 @@
+/**
+ * ============================================================================
+ * File: src/styles/components/_form.scss
+ * Description: Text inputs, OTP digit boxes, select/toggle controls, and
+ *              form-field layout (label + input + error message) shared by
+ *              AuthBuyModal, SettingsPage, MerchantLogin, AdminLogin, and all
+ *              admin CMS forms (OfferCMSForm, CenterManagerTable edit rows).
+ * Usage / Imported By: components/customer/AuthBuyModal.jsx,
+ *                       pages/SettingsPage.jsx, pages/MerchantLogin.jsx,
+ *                       components/admin/OfferCMSForm.jsx
+ * ============================================================================
+ */
+
+.field {
+  @include flex-column;
+  gap: $spacing-xs;
+  margin-bottom: $spacing-md;
+
+  &__label {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $color-text-secondary;
+  }
+
+  &__input,
+  &__textarea,
+  &__select {
+    width: 100%;
+    padding: $spacing-md;
+    background: $color-bg-secondary;
+    border: 1px solid $color-border-subtle;
+    border-radius: $border-radius-md;
+    color: $color-text-primary;
+    font-size: $font-size-base;
+    transition: border-color $transition-fast, box-shadow $transition-fast;
+    @include focus-ring;
+
+    &::placeholder {
+      color: $color-text-muted;
+    }
+
+    &:focus {
+      border-color: $color-accent-cyan;
+    }
+
+    &--error {
+      border-color: $color-error;
+    }
+  }
+
+  &__textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+
+  &__error {
+    font-size: $font-size-xs;
+    color: $color-error;
+  }
+
+  &__hint {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+  }
+
+  &__prefix-group {
+    display: flex;
+    align-items: stretch;
+    direction: ltr;
+  }
+
+  &__prefix {
+    @include flex-center;
+    padding: 0 $spacing-md;
+    background: $color-bg-card-subtle;
+    border: 1px solid $color-border-subtle;
+    border-left: none;
+    border-radius: $border-radius-md 0 0 $border-radius-md;
+    color: $color-text-muted;
+    font-size: $font-size-sm;
+  }
+
+  &__prefix-group &__input {
+    border-radius: 0 $border-radius-md $border-radius-md 0;
+  }
+}
+
+// --- OTP digit input group ---
+.otp-input {
+  display: flex;
+  gap: $spacing-sm;
+  direction: ltr;
+  justify-content: center;
+
+  &__digit {
+    width: 48px;
+    height: 56px;
+    text-align: center;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    background: $color-bg-secondary;
+    border: 1px solid $color-border-subtle;
+    border-radius: $border-radius-md;
+    color: $color-text-primary;
+    transition: border-color $transition-fast;
+    @include focus-ring;
+
+    &:focus {
+      border-color: $color-accent-cyan;
+      box-shadow: $shadow-cyan-hover;
+    }
+  }
+}
+
+// --- Toggle switch (active/inactive, used in admin tables) ---
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  flex-shrink: 0;
+
+  &__input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+
+    &:checked + .toggle-switch__track {
+      background: $color-success;
+    }
+
+    &:checked + .toggle-switch__track .toggle-switch__thumb {
+      transform: translateX(-20px);
+    }
+
+    &:disabled + .toggle-switch__track {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  &__track {
+    position: absolute;
+    inset: 0;
+    background: $color-text-muted;
+    border-radius: $radius-full;
+    cursor: pointer;
+    transition: background $transition-fast;
+  }
+
+  &__thumb {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 20px;
+    height: 20px;
+    background: $color-text-primary;
+    border-radius: $radius-full;
+    transition: transform $transition-fast;
+  }
+}
+
+// --- Image upload dropzone (9:16 offer images in Admin CMS) ---
+.image-dropzone {
+  @include aspect-ratio-9-16;
+  max-width: 180px;
+  @include flex-center;
+  flex-direction: column;
+  gap: $spacing-sm;
+  border: 2px dashed $color-border-subtle;
+  background: $color-bg-secondary;
+  color: $color-text-muted;
+  cursor: pointer;
+  transition: border-color $transition-fast;
+
+  &:hover {
+    border-color: $color-accent-cyan;
+  }
+
+  &__preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

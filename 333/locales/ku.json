@@ -1,0 +1,150 @@
+{
+  "common": {
+    "appName": "سوپەر کارت",
+    "loading": "چاوەڕوانبە...",
+    "submit": "ناردن",
+    "cancel": "پاشگەزبوونەوە",
+    "confirm": "دڵنیاکردنەوە",
+    "close": "داخستن",
+    "back": "گەڕانەوە",
+    "next": "دواتر",
+    "save": "پاشەکەوتکردن",
+    "edit": "دەستکاریکردن",
+    "delete": "سڕینەوە",
+    "search": "گەڕان",
+    "yes": "بەڵێ",
+    "no": "نەخێر",
+    "error": "هەڵەیەک ڕوویدا",
+    "success": "سەرکەوتوو بوو",
+    "retry": "دووبارە هەوڵبدەوە",
+    "copy": "کۆپیکردن",
+    "copied": "کۆپی کرا!"
+  },
+  "nav": {
+    "home": "سەرەکی",
+    "profile": "پرۆفایل",
+    "settings": "ڕێکخستنەکان",
+    "buyCard": "کڕینی کارت",
+    "logout": "چوونەدەرەوە"
+  },
+  "home": {
+    "heroTitle": "سوپەر کارت",
+    "heroSubtitle": "کارتی VIP بۆ خزمەتگوزاری ناوازە و خەڵاتی دیاریکراو",
+    "priceLabel": "تەنها بە",
+    "ctaButton": "ئێستا بیکڕە",
+    "offersTitle": "ئۆفەرە تایبەتەکان",
+    "giftBoxTeaser": "هەر کڕیارێک دیاری دیاریکراوی دەستکەوێت!",
+    "howItWorksTitle": "چۆن کار دەکات؟",
+    "step1": "کارتەکەت بکڕە",
+    "step2": "سندوقی دیاریت بکەرەوە",
+    "step3": "چۆڵگای خەڵاتەکەت وەربگرە",
+    "step4": "لە سەنتەرەکان کەڵک وەربگرە"
+  },
+  "offer": {
+    "freeService": "خزمەتگوزاری بەخۆڕایی",
+    "discountUpTo": "داشکاندن تا",
+    "viewDetails": "زانیاری زیاتر",
+    "location": "شوێن",
+    "terms": "مەرجەکان",
+    "contactWhatsapp": "پەیوەندی بە واتساپ",
+    "category": "پۆل"
+  },
+  "auth": {
+    "phoneLabel": "ژمارەی مۆبایل",
+    "phonePlaceholder": "٠٧٥٠ ١٢٣ ٤٥٦٧",
+    "sendOtp": "کۆدی پشتڕاستکردنەوە بنێرە",
+    "otpLabel": "کۆدی پشتڕاستکردنەوە",
+    "otpSentTo": "کۆدەکە نێردرا بۆ",
+    "verifyOtp": "پشتڕاستکردنەوە",
+    "resendOtp": "دووبارە ناردنەوەی کۆد",
+    "resendIn": "دووبارە ناردنەوە لە",
+    "invalidPhone": "تکایە ژمارەیەکی دروست بنووسە",
+    "invalidOtp": "کۆدەکە هەڵەیە",
+    "loginSuccess": "بەسەرکەوتوویی چوویتە ژوورەوە"
+  },
+  "payment": {
+    "payWithFib": "پارەدان بە FIB",
+    "scanQr": "کۆدی QR سکان بکە",
+    "openFibApp": "کردنەوەی ئەپی FIB",
+    "waitingPayment": "چاوەڕوانی پارەدانین...",
+    "paymentSuccess": "پارەدانەکە سەرکەوتوو بوو",
+    "paymentFailed": "پارەدانەکە سەرنەکەوت",
+    "paymentExpired": "کاتی پارەدان بەسەرچوو",
+    "tryAgain": "دووبارە هەوڵبدەوە",
+    "amountToPay": "بڕی پارەدان",
+    "invoiceId": "ژمارەی پسوولە",
+    "backToHome": "گەڕانەوە بۆ سەرەکی"
+  },
+  "giftBox": {
+    "title": "سندوقی C-BOX",
+    "subtitle": "تاڵارێکی چڵکنراو بۆ دیاریی تایبەتت",
+    "tapToOpen": "دەستبنێ بۆ کردنەوە",
+    "shaking": "سندوقەکە دەلەرزێت...",
+    "revealing": "خەریکی ئاشکراکردنە...",
+    "congrats": "پیرۆزە!",
+    "youWon": "تۆ براوە بوویت بە",
+    "claimPrize": "وەرگرتنی خەڵات",
+    "prizeClaimed": "خەڵاتەکە وەرگیرا"
+  },
+  "profile": {
+    "title": "پرۆفایلی من",
+    "myCard": "کارتی من",
+    "activeStatus": "چالاک",
+    "inactiveStatus": "ناچالاک",
+    "remainingPerks": "خزمەتگوزارییە ماوەکان",
+    "usedPerks": "بەکارهاتوو",
+    "cardCode": "کۆدی کارت",
+    "giftBoxButton": "کردنەوەی سندوقی دیاری"
+  },
+  "settings": {
+    "title": "ڕێکخستنەکان",
+    "accountInfo": "زانیاری هەژمار",
+    "name": "ناو",
+    "phone": "ژمارەی مۆبایل",
+    "language": "زمان",
+    "security": "پاراستن",
+    "logoutConfirm": "دڵنیایت لە چوونەدەرەوە؟"
+  },
+  "merchant": {
+    "loginTitle": "چوونەژوورەوەی سەنتەر",
+    "username": "ناوی بەکارهێنەر",
+    "password": "وشەی تێپەربو",
+    "scannerTitle": "سکانەری QR",
+    "scanInstructions": "کۆدی QR کڕیار لەناو چوارچێوەکەدا دابنێ",
+    "manualEntry": "تۆمارکردنی دەستی",
+    "cardValid": "کارتەکە چالاکە و خزمەتگوزاریی بەردەستە",
+    "cardUsed": "ئەم خزمەتگوزاریە پێشتر بەکارهاتووە",
+    "cardInvalid": "کارتەکە نادروستە",
+    "confirmUsed": "کارتەکەمان بەکارهێنا",
+    "confirmNotUsed": "بەکارمان نەهێنا",
+    "redemptionSuccess": "بەسەرکەوتوویی تۆمار کرا"
+  },
+  "admin": {
+    "loginTitle": "چوونەژوورەوەی ئادمین",
+    "dashboardTitle": "بەڕێوەبردنی گشتی",
+    "offersTab": "ئۆفەرەکان",
+    "centersTab": "سەنتەرەکان",
+    "prizesTab": "خەڵاتەکان",
+    "addNew": "زیادکردنی نوێ",
+    "offerTitle": "ناونیشانی ئۆفەر",
+    "offerImage": "وێنەی ئۆفەر (٩:١٦)",
+    "centerName": "ناوی سەنتەر",
+    "centerStatus": "دۆخ",
+    "prizeStock": "بڕی ماوە",
+    "prizeWeight": "کێشی ئەگەری",
+    "activate": "چالاککردن",
+    "deactivate": "ناچالاککردن"
+  },
+  "errors": {
+    "network": "کێشەیەک لە پەیوەندیدا ڕوویدا",
+    "unauthorized": "دەستگەیشتنت نییە",
+    "notFound": "نەدۆزرایەوە",
+    "serverError": "هەڵەی ڕاژەکار",
+    "genericError": "هەڵەیەک ڕوویدا، تکایە دووبارە هەوڵبدەوە"
+  },
+  "notFound": {
+    "title": "٤٠٤ - پەڕەکە نەدۆزرایەوە",
+    "message": "ئەم ناونیشانە بوونی نییە.",
+    "backHome": "گەڕانەوە بۆ پەڕەی سەرەکی"
+  }
+}

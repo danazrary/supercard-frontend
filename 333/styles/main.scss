@@ -1,0 +1,83 @@
+/**
+ * ============================================================================
+ * File: src/styles/main.scss
+ * Description: Master SCSS entry point. Imports abstracts (variables, mixins,
+ *              breakpoints) first so every subsequent partial has access to
+ *              design tokens, then base styles (reset, typography,
+ *              animations), then component partials, then layout. This is
+ *              the ONLY stylesheet imported directly by the application
+ *              (see index.jsx: `import './styles/main.scss'`).
+ * Usage / Imported By: src/index.jsx
+ * ============================================================================
+ */
+
+// 1. Abstracts — variables & mixins must load first (no CSS output themselves)
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'abstracts/breakpoints';
+
+// 2. Base — global element styles and keyframes
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/animations';
+
+// 3. Components — reusable UI building blocks
+@import 'components/button';
+@import 'components/badge';
+@import 'components/modal';
+@import 'components/card';
+@import 'components/form';
+@import 'components/table';
+@import 'components/qr-scanner';
+
+// 4. Layout — page chrome (navigation, containers)
+@import 'layout/navigation';
+
+// ----------------------------------------------------------------------------
+// Global utility classes not tied to a single component
+// ----------------------------------------------------------------------------
+
+.container {
+  width: 100%;
+  max-width: $container-max-mobile;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+.screen {
+  min-height: 100vh;
+  @include flex-column;
+}
+
+.section {
+  padding: $spacing-xl $spacing-md;
+}
+
+.divider {
+  height: 1px;
+  background: $color-border-subtle;
+  border: none;
+  margin: $spacing-lg 0;
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    $color-bg-card 25%,
+    $color-bg-card-subtle 37%,
+    $color-bg-card 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+  border-radius: $border-radius-md;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba($color-accent-cyan, 0.2);
+  border-top-color: $color-accent-cyan;
+  border-radius: $radius-full;
+  animation: spin 0.7s linear infinite;
+  margin: 0 auto;
+}

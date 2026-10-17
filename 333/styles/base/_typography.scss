@@ -1,0 +1,110 @@
+/**
+ * ============================================================================
+ * File: src/styles/base/_typography.scss
+ * Description: Kurdish RTL font stack and typography utility classes built
+ *              on the $font-size-* / $font-weight-* / $line-height-* tokens.
+ *              Defines heading scale, body text, and reusable text utility
+ *              classes (gold gradient title, muted caption, etc.) used
+ *              across pages and components.
+ * Usage / Imported By: styles/main.scss
+ * ============================================================================
+ */
+
+body,
+input,
+textarea,
+button,
+select {
+  font-family: 'Vazirmatn', 'Noto Sans Arabic', 'Rabar', 'Segoe UI', system-ui, sans-serif;
+}
+
+h1,
+.text-h1 {
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-heading;
+}
+
+h2,
+.text-h2 {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-heading;
+}
+
+h3,
+.text-h3 {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-heading;
+}
+
+h4,
+.text-h4 {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-heading;
+}
+
+p,
+.text-body {
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-relaxed;
+  color: $color-text-secondary;
+}
+
+.text-sm {
+  font-size: $font-size-sm;
+}
+
+.text-xs {
+  font-size: $font-size-xs;
+}
+
+.text-muted {
+  color: $color-text-muted;
+}
+
+.text-gold {
+  color: $color-gold-primary;
+}
+
+.text-gold-gradient {
+  @include text-gold-gradient;
+  font-weight: $font-weight-bold;
+}
+
+.text-cyan {
+  color: $color-accent-cyan;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-bold {
+  font-weight: $font-weight-bold;
+}
+
+.text-semibold {
+  font-weight: $font-weight-semibold;
+}
+
+// Large price display (e.g. "25,000 دینار" on the landing page hero).
+.price-display {
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-bold;
+  @include text-gold-gradient;
+  direction: ltr;
+  display: inline-block;
+  unicode-bidi: isolate;
+}
+
+// LTR isolation utility for embedded codes, phone numbers, timestamps
+// inside an otherwise RTL document flow.
+.ltr-inline {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+}

@@ -1,0 +1,150 @@
+{
+  "common": {
+    "appName": "Super Card",
+    "loading": "Loading...",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "search": "Search",
+    "yes": "Yes",
+    "no": "No",
+    "error": "An error occurred",
+    "success": "Success",
+    "retry": "Retry",
+    "copy": "Copy",
+    "copied": "Copied!"
+  },
+  "nav": {
+    "home": "Home",
+    "profile": "Profile",
+    "settings": "Settings",
+    "buyCard": "Buy Card",
+    "logout": "Logout"
+  },
+  "home": {
+    "heroTitle": "Super Card",
+    "heroSubtitle": "A VIP card for exclusive services and instant prizes",
+    "priceLabel": "Only for",
+    "ctaButton": "Buy Now",
+    "offersTitle": "Exclusive Offers",
+    "giftBoxTeaser": "Every purchase guarantees an instant prize!",
+    "howItWorksTitle": "How It Works",
+    "step1": "Buy your card",
+    "step2": "Open your gift box",
+    "step3": "Reveal your instant prize",
+    "step4": "Redeem at partner centers"
+  },
+  "offer": {
+    "freeService": "Free Service",
+    "discountUpTo": "Discount up to",
+    "viewDetails": "View Details",
+    "location": "Location",
+    "terms": "Terms",
+    "contactWhatsapp": "Contact via WhatsApp",
+    "category": "Category"
+  },
+  "auth": {
+    "phoneLabel": "Mobile Number",
+    "phonePlaceholder": "0750 123 4567",
+    "sendOtp": "Send Verification Code",
+    "otpLabel": "Verification Code",
+    "otpSentTo": "Code sent to",
+    "verifyOtp": "Verify",
+    "resendOtp": "Resend Code",
+    "resendIn": "Resend in",
+    "invalidPhone": "Please enter a valid number",
+    "invalidOtp": "Invalid code",
+    "loginSuccess": "Logged in successfully"
+  },
+  "payment": {
+    "payWithFib": "Pay with FIB",
+    "scanQr": "Scan QR Code",
+    "openFibApp": "Open FIB App",
+    "waitingPayment": "Waiting for payment...",
+    "paymentSuccess": "Payment Successful",
+    "paymentFailed": "Payment Failed",
+    "paymentExpired": "Payment session expired",
+    "tryAgain": "Try Again",
+    "amountToPay": "Amount Due",
+    "invoiceId": "Invoice ID",
+    "backToHome": "Back to Home"
+  },
+  "giftBox": {
+    "title": "C-BOX",
+    "subtitle": "A luxury chest holding your exclusive gift",
+    "tapToOpen": "Tap to Open",
+    "shaking": "The box is shaking...",
+    "revealing": "Revealing...",
+    "congrats": "Congratulations!",
+    "youWon": "You won",
+    "claimPrize": "Claim Prize",
+    "prizeClaimed": "Prize Claimed"
+  },
+  "profile": {
+    "title": "My Profile",
+    "myCard": "My Card",
+    "activeStatus": "Active",
+    "inactiveStatus": "Inactive",
+    "remainingPerks": "Remaining Perks",
+    "usedPerks": "Used",
+    "cardCode": "Card Code",
+    "giftBoxButton": "Open Gift Box"
+  },
+  "settings": {
+    "title": "Settings",
+    "accountInfo": "Account Information",
+    "name": "Name",
+    "phone": "Mobile Number",
+    "language": "Language",
+    "security": "Security",
+    "logoutConfirm": "Are you sure you want to log out?"
+  },
+  "merchant": {
+    "loginTitle": "Center Login",
+    "username": "Username",
+    "password": "Password",
+    "scannerTitle": "QR Scanner",
+    "scanInstructions": "Place the customer's QR code within the frame",
+    "manualEntry": "Manual Entry",
+    "cardValid": "Card is active and service is available",
+    "cardUsed": "This service has already been redeemed",
+    "cardInvalid": "Invalid card",
+    "confirmUsed": "Confirm Used",
+    "confirmNotUsed": "Not Used",
+    "redemptionSuccess": "Recorded successfully"
+  },
+  "admin": {
+    "loginTitle": "Admin Login",
+    "dashboardTitle": "Admin Dashboard",
+    "offersTab": "Offers",
+    "centersTab": "Centers",
+    "prizesTab": "Prizes",
+    "addNew": "Add New",
+    "offerTitle": "Offer Title",
+    "offerImage": "Offer Image (9:16)",
+    "centerName": "Center Name",
+    "centerStatus": "Status",
+    "prizeStock": "Remaining Stock",
+    "prizeWeight": "Probability Weight",
+    "activate": "Activate",
+    "deactivate": "Deactivate"
+  },
+  "errors": {
+    "network": "A connection problem occurred",
+    "unauthorized": "You are not authorized",
+    "notFound": "Not Found",
+    "serverError": "Server Error",
+    "genericError": "Something went wrong, please try again"
+  },
+  "notFound": {
+    "title": "404 - Page Not Found",
+    "message": "This address does not exist.",
+    "backHome": "Back to Home"
+  }
+}

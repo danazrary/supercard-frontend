@@ -1,0 +1,562 @@
+/**
+ * ============================================================================
+ * File: src/styles/components/_offer-cms-form.scss
+ * Description: Responsive SCSS styling for the 3:4 Offer CMS Builder & Live Preview.
+ * ============================================================================
+ */
+@import "../abstracts/variables";
+
+.offer-cms {
+  background-color: $color-bg-secondary;
+  border: 1px solid $color-border-gold;
+  border-radius: $radius-lg;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+
+  @media (max-width: $breakpoint-md) {
+    padding: 1.25rem;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $color-border-subtle;
+  }
+
+  &__title {
+    color: $color-gold-primary;
+    font-size: $font-size-xl;
+    font-weight: 800;
+    margin: 0;
+  }
+
+  /* ئاگادارکردنەوەی گەڕاندنەوەی داتا لە کاتی ڕیفرێش بوونەوە */
+  &__draft-banner {
+    background-color: $color-warning-bg;
+    border: 1px solid $color-warning;
+    border-radius: $radius-md;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    &-text {
+      strong {
+        display: block;
+        color: $color-gold-primary;
+        font-size: $font-size-base;
+        margin-bottom: 0.25rem;
+      }
+      span {
+        color: $color-text-secondary;
+        font-size: $font-size-sm;
+      }
+    }
+
+    &-actions {
+      display: flex;
+      gap: 0.75rem;
+    }
+  }
+
+  &__status-alert {
+    padding: 1rem 1.25rem;
+    border-radius: $radius-md;
+    margin-bottom: 1.5rem;
+    font-size: $font-size-sm;
+    font-weight: 700;
+
+    &--error {
+      background-color: $color-error-bg;
+      color: $color-error;
+      border: 1px solid $color-error;
+    }
+
+    &--success {
+      background-color: $color-success-bg;
+      color: $color-success;
+      border: 1px solid $color-success;
+    }
+  }
+
+  /* دابەشکردنی شاشە بۆ فۆڕم و پێشبینینی ڕاستەوخۆ بە بۆشایی فراوان */
+  &__grid {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+
+    @media (max-width: $breakpoint-lg) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  &__form-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  /* کارتە جیاکراوەکانی ناو فۆڕمەکە */
+  &__section-box {
+    background-color: $color-bg-primary;
+    border: 1px solid $color-border-subtle;
+    border-radius: $radius-md;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    &--highlight {
+      border-color: $color-border-cyan;
+    }
+
+    &--lang {
+      border-color: $color-border-gold;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      padding: 1.15rem;
+    }
+  }
+
+  &__section-title {
+    color: $color-accent-cyan;
+    font-size: $font-size-md;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  &__upload-zone {
+    border: 2px dashed $color-border-cyan;
+    border-radius: $radius-md;
+    padding: 1.5rem;
+    text-align: center;
+    background-color: rgba($color-bg-card, 0.5);
+    transition: border-color 0.2s ease;
+
+    &:hover {
+      border-color: $color-gold-primary;
+    }
+
+    input[type="file"] {
+      color: $color-text-secondary;
+      font-size: $font-size-sm;
+      max-width: 100%;
+    }
+  }
+
+  &__lang-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+  }
+
+  &__lang-btn {
+    padding: 0.65rem 1.35rem;
+    border-radius: $radius-full;
+    border: 1px solid $color-border-subtle;
+    background-color: rgba(255, 255, 255, 0.04);
+    color: $color-text-secondary;
+    font-size: $font-size-sm;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &.is-selected {
+      background-color: $color-gold-primary;
+      color: $color-text-dark;
+      border-color: $color-gold-primary;
+      box-shadow: 0 4px 14px rgba($color-gold-primary, 0.35);
+    }
+  }
+
+  &__empty-notice {
+    color: $color-warning;
+    background-color: $color-warning-bg;
+    padding: 0.85rem 1rem;
+    border-radius: $radius-sm;
+    font-size: $font-size-sm;
+    margin: 0;
+  }
+
+  &__field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.15rem;
+
+    @media (max-width: $breakpoint-sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+
+    label {
+      color: $color-text-secondary;
+      font-size: $font-size-sm;
+      font-weight: 600;
+    }
+  }
+
+  &__hint {
+    color: $color-text-muted;
+    font-size: $font-size-xs;
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: $radius-sm;
+    background-color: $color-bg-secondary;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: $color-text-primary;
+    font-size: $font-size-sm;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: $color-accent-cyan;
+    }
+
+    &--english-caps {
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 800;
+      font-family: "Montserrat", "Inter", system-ui, -apple-system, sans-serif;
+    }
+  }
+
+  &__bg-toggle-row {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  &__toggle-pill {
+    flex: 1;
+    min-width: 140px;
+    padding: 0.7rem 1rem;
+    border-radius: $radius-sm;
+    border: 1px solid $color-border-subtle;
+    background-color: $color-bg-secondary;
+    color: $color-text-secondary;
+    font-size: $font-size-xs;
+    font-weight: 700;
+    cursor: pointer;
+
+    &.is-active {
+      border-color: $color-accent-cyan;
+      background-color: rgba($color-accent-cyan, 0.14);
+      color: $color-accent-cyan;
+    }
+  }
+
+  &__copy-btn {
+    background-color: rgba($color-accent-cyan, 0.14);
+    color: $color-accent-cyan;
+    border: 1px solid $color-border-cyan;
+    padding: 0.4rem 0.85rem;
+    border-radius: $radius-sm;
+    font-size: $font-size-xs;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  &__feature-card {
+    background-color: $color-bg-secondary;
+    padding: 1rem;
+    border-radius: $radius-sm;
+    border: 1px solid $color-border-subtle;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  /* ==========================================
+     LIVE PREVIEW CARD (3:4 + Out of Image Box)
+     ========================================== */
+  &__preview-col {
+    position: sticky;
+    top: 95px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__preview-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $color-bg-primary;
+    padding: 0.75rem 1rem;
+    border-radius: $radius-md;
+    border: 1px solid $color-border-subtle;
+  }
+
+  &__preview-card {
+    width: 100%;
+    max-width: 370px;
+    margin: 0 auto;
+    background-color: $color-bg-card;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.65);
+  }
+
+  &__image-stage {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    background-color: $color-bg-card-subtle;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__image-shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(6, 11, 19, 0.6) 0%,
+      rgba(6, 11, 19, 0.25) 45%,
+      rgba(6, 11, 19, 0.88) 100%
+    );
+  }
+
+  &__top-badges {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    right: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    direction: ltr;
+    gap: 0.5rem;
+  }
+
+  /* بادجی سەرەوە لای چەپ: بەپێی هەڵبژاردنی ئادمین پاشبنەمای دەبێت یان نا */
+  &__left-work-tag {
+    font-size: $font-size-xs;
+    font-weight: 800;
+    padding: 0.4rem 0.9rem;
+    border-radius: $radius-full;
+    transition: all 0.2s ease;
+
+    &.has-bg {
+      background-color: rgba(255, 255, 255, 0.94);
+      color: $color-text-dark;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    }
+
+    &.no-bg {
+      background: transparent;
+      color: $color-text-primary;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
+    }
+  }
+
+  /* بادجی سەرەوە لای ڕاست: هەمیشە پاشبنەمای هەیە */
+  &__right-discount-badge {
+    background-color: $color-accent-cyan;
+    color: $color-text-dark;
+    padding: 0.4rem 0.95rem;
+    border-radius: $radius-full;
+    font-size: $font-size-xs;
+    font-weight: 900;
+    box-shadow: 0 4px 14px rgba($color-accent-cyan, 0.45);
+  }
+
+  /* ناوەڕاستی وێنە: ناوی سەنتەر بە ئینگلیزی کاپیتاڵ + تایتڵی ئۆفەر لە ژێریدا */
+  &__center-overlay {
+    position: absolute;
+    top: 53%;
+    left: 16px;
+    right: 16px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.65rem;
+    text-align: center;
+  }
+
+  &__center-name-en {
+    font-family: "Montserrat", "Inter", system-ui, -apple-system, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-weight: 900;
+    font-size: $font-size-base;
+    padding: 0.45rem 1.25rem;
+    border-radius: $radius-full;
+
+    &.has-bg {
+      background-color: rgba(255, 255, 255, 0.95);
+      color: $color-text-dark;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    &.no-bg {
+      background: transparent;
+      color: $color-gold-primary;
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.95);
+    }
+  }
+
+  &__overlay-title {
+    font-weight: 800;
+    font-size: $font-size-md;
+    padding: 0.5rem 1.35rem;
+    border-radius: $radius-full;
+    max-width: 95%;
+
+    &.has-bg {
+      background-color: rgba(255, 255, 255, 0.95);
+      color: $color-text-dark;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    &.no-bg {
+      background: transparent;
+      color: $color-text-primary;
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.95);
+    }
+  }
+
+  /* فیچەرەکانی خوارەوەی ناو وێنە: هەمیشە پاشبنەمایان هەیە و سکرۆڵ دەکرێن */
+  &__features-strip {
+    position: absolute;
+    bottom: 14px;
+    left: 12px;
+    right: 12px;
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgba($color-gold-primary, 0.5);
+      border-radius: $radius-full;
+    }
+  }
+
+  &__feature-pill {
+    flex-shrink: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: $color-text-dark;
+    padding: 0.45rem 1rem;
+    border-radius: $radius-full;
+    font-size: $font-size-xs;
+    font-weight: 800;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  }
+
+  /* بەشی خوارەوەی دەرەوەی وێنەکە (دیسکریپشن، لۆکەیشن، ژمارە، نرخ) */
+  &__outside-bottom {
+    padding: 1.25rem;
+    background-color: $color-bg-card;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  &__outside-desc {
+    color: $color-text-secondary;
+    font-size: $font-size-sm;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  &__outside-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid $color-border-subtle;
+  }
+
+  &__meta-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: $font-size-xs;
+    color: $color-text-secondary;
+  }
+
+  &__price-tag {
+    background: $color-gold-gradient;
+    color: $color-text-dark;
+    padding: 0.5rem 1rem;
+    border-radius: $radius-sm;
+    font-weight: 900;
+    font-size: $font-size-base;
+  }
+
+  /* مۆداڵی بڕینی وێنەی 3:4 */
+  &__cropper-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.86);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+  }
+
+  &__cropper-modal {
+    background-color: $color-bg-secondary;
+    border: 1px solid $color-gold-primary;
+    border-radius: $radius-lg;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+  }
+
+  &__cropper-stage {
+    width: 300px;
+    height: 400px;
+    margin: 1rem auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: $radius-md;
+    border: 2px dashed $color-accent-cyan;
+    background-color: $color-bg-primary;
+    cursor: grab;
+    touch-action: none;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+}

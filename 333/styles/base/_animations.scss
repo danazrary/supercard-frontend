@@ -1,0 +1,167 @@
+/**
+ * ============================================================================
+ * File: src/styles/base/_animations.scss
+ * Description: Global @keyframes definitions used throughout the app: the
+ *              C-BOX chest shake/open sequence, gold particle pulse (gift
+ *              reveal sparkle), scanline laser sweep (QR scanner viewfinder),
+ *              fade-in for modals, and a generic shimmer/pulse for loading
+ *              states. Component SCSS partials reference these by name via
+ *              `animation: <name> ...` rather than redefining keyframes
+ *              locally.
+ * Usage / Imported By: styles/main.scss; applied by components/customer/
+ *                       GiftBoxModal, components/merchant/QRScannerCamera,
+ *                       components/common/Modal
+ * ============================================================================
+ */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes modal-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes chest-shake {
+  0%,
+  100% {
+    transform: rotate(0deg) translateX(0);
+  }
+  10% {
+    transform: rotate(-4deg) translateX(-4px);
+  }
+  20% {
+    transform: rotate(4deg) translateX(4px);
+  }
+  30% {
+    transform: rotate(-6deg) translateX(-5px);
+  }
+  40% {
+    transform: rotate(6deg) translateX(5px);
+  }
+  50% {
+    transform: rotate(-5deg) translateX(-4px);
+  }
+  60% {
+    transform: rotate(5deg) translateX(4px);
+  }
+  70% {
+    transform: rotate(-3deg) translateX(-2px);
+  }
+  80% {
+    transform: rotate(3deg) translateX(2px);
+  }
+  90% {
+    transform: rotate(-1deg) translateX(-1px);
+  }
+}
+
+@keyframes chest-lid-open {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(-110deg);
+  }
+}
+
+@keyframes gold-particle-pulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) translateY(0);
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.4) translateY(-60px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: $shadow-gold-pulse-sm;
+  }
+  50% {
+    box-shadow: $shadow-gold-pulse-lg;
+  }
+}
+
+@keyframes cyan-pulse {
+  0%,
+  100% {
+    box-shadow: $shadow-cyan-glow;
+  }
+  50% {
+    box-shadow: $shadow-cyan-hover;
+  }
+}
+
+@keyframes scanline-sweep {
+  0% {
+    top: 4%;
+  }
+  50% {
+    top: 94%;
+  }
+  100% {
+    top: 4%;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes checkmark-pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}

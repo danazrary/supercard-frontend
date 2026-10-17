@@ -11,6 +11,12 @@
 import axios from "axios";
 import { API_ROUTES, STORAGE_KEYS } from "../utils/constants";
 
+// خوێندنەوەی کۆکی لە وێبگەڕدا
+const getCookie = (name) => {
+  const match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
+  return match ? decodeURIComponent(match[2]) : null;
+};
+
 export class ApiError extends Error {
   constructor(message, status = 500, data = null) {
     super(message);
@@ -21,7 +27,8 @@ export class ApiError extends Error {
 }
 
 const api = axios.create({
-  baseURL: API_ROUTES.BASE_URL,
+  baseURL: API_ROUTES.BASE_URL || "http://localhost:5000/api",
+  withCredentials: true, // هەمیشە Cookies لەگەڵ هەموو داواکارییەک دەنێرێت بۆ باکئێند
   timeout: 15000,
   headers: {
     "Content-Type": "application/json",
@@ -31,12 +38,21 @@ const api = axios.create({
 
 api.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem(STORAGE_KEYS.AUTH_TOKEN);
-    const locale = localStorage.getItem(STORAGE_KEYS.APP_LOCALE) || "ku";
+    const token =
+      getCookie("admin_token") ||
+      getCookie("sc_auth_token") ||
+      localStorage.getItem(STORAGE_KEYS.AUTH_TOKEN);
 
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
+
+    // چارەسەرکردنی هەڵەی locale is not defined
+    const locale =
+      localStorage.getItem(STORAGE_KEYS.LOCALE) ||
+      localStorage.getItem("sc_language") ||
+      "ku";
+
     config.headers["Accept-Language"] = locale;
     return config;
   },

@@ -12,7 +12,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import useLanguage from "../../hooks/useLanguage";
 import useAuth from "../../hooks/useAuth";
 import LanguageSwitcher from "../common/LanguageSwitcher/LanguageSwitcher";
-
+import Logo from "../../assets/images/logo/logo-only.jpg";
 export default function Header({ onOpenAuth }) {
   const { t } = useLanguage();
   const { isAuthenticated } = useAuth();
@@ -47,7 +47,7 @@ export default function Header({ onOpenAuth }) {
         {/* Left Side: Brand Logo */}
         <Link to="/" className="super-header__brand">
           <div className="super-header__logo-badge">
-            <span>S</span>
+          <img src={Logo} alt="Super Card Logo" className="super-header__logo" /> 
           </div>
           <div className="super-header__brand-text">
             <span className="super-header__brand-title">SUPER CARD</span>

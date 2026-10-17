@@ -62,10 +62,10 @@ export async function verifyOtp(phone, otp) {
  * @description Authenticates partner clinics & beauty centers in Erbil.
  * @route POST /api/v1/auth/merchant/login
  * @headers Content-Type: application/json
- * @param {string} username - Merchant handle (e.g., 'kurd_smile_erbil').
+ * @param {string} email - Merchant email address.
  * @param {string} password - Secure merchant secret.
  * @payloadSentToBackend {
- *    "username": "kurd_smile_erbil",
+ *    "email": "kurdsmile@supercard.iq",
  *    "password": "SecurePassword123!"
  * }
  * @responseFromBackend {
@@ -80,8 +80,8 @@ export async function verifyOtp(phone, otp) {
  * }
  * @throws {ApiError} 401 (Invalid merchant credentials), 403 (Account suspended), 500.
  */
-export async function loginMerchant(username, password) {
-  return await api.post(API_ROUTES.AUTH.MERCHANT_LOGIN, { username, password });
+export async function loginMerchant(email, password) {
+  return await api.post(API_ROUTES.AUTH.MERCHANT_LOGIN, { email, password });
 }
 
 /**
@@ -105,8 +105,8 @@ export async function loginMerchant(username, password) {
  * }
  * @throws {ApiError} 401 (Unauthorized), 500.
  */
-export async function loginAdmin(username, password) {
-  return await api.post(API_ROUTES.AUTH.ADMIN_LOGIN, { username, password });
+export async function loginAdmin(email, password) {
+  return await api.post(API_ROUTES.AUTH.ADMIN_LOGIN, { email, password });
 }
 
 /**

@@ -1,96 +1,288 @@
-@use '../styles//abstracts/_variables' as *;
+/**
+ * ============================================================================
+ * File: src/pages/_home-page.scss
+ * Description: Clean SCSS strictly for HomePage layout and 3:4 Offer Cards.
+ *              Box styles are modularized in src/styles/components/_box-system.scss
+ * ============================================================================
+ */
+@use "../styles/abstracts/variables" as *;
+
+$turquoise-main: #00e5c9;
 
 .sc-home-page {
   min-height: 100vh;
-  background: $color-bg-primary;
+  background-color: $color-bg-primary;
   color: $color-text-primary;
-  font-family: 'Noto Sans Arabic', 'Rabar', 'Vazirmatn', system-ui, sans-serif;
-  padding-bottom: 7rem;
+  padding-bottom: 5rem;
 
   &__content {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 2.75rem;
+  }
+
+  &__section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
   }
 
   &__section-title {
-    font-size: $font-size-xl;
+    font-size: $font-size-2xl;
     font-weight: 800;
     color: $color-text-primary;
-    padding: 0 1.25rem;
-    margin: 0 0 1rem;
-    max-width: $breakpoint-md;
-    margin-inline: auto;
+    margin: 0;
+  }
+
+  &__offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.75rem;
+  }
+
+  &__offer-card34 {
+    background-color: $color-bg-card;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.55);
+    cursor: pointer;
+    transition: transform 0.28s ease, border-color 0.28s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+      border-color: $turquoise-main;
+    }
+  }
+
+  &__offer-stage {
+    position: relative;
     width: 100%;
-    box-sizing: border-box;
+    aspect-ratio: 3 / 4;
+    background-color: $color-bg-card-subtle;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
   }
 
-  &__offers {
-    padding: 1rem 0 2rem;
+  &__offer-card34:hover &__offer-stage img {
+    transform: scale(1.04);
   }
 
-  &__offers-scroll {
+  &__offer-shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(6, 11, 19, 0.58) 0%,
+      rgba(6, 11, 19, 0.22) 45%,
+      rgba(6, 11, 19, 0.88) 100%
+    );
+  }
+
+  &__offer-top-badges {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    right: 14px;
     display: flex;
-    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    direction: ltr;
+    gap: 0.5rem;
+    z-index: 2;
+  }
+
+  &__left-work-tag {
+    font-size: $font-size-xs;
+    font-weight: 700;
+    padding: 0.4rem 0.9rem;
+    border-radius: $radius-full;
+
+    &.has-bg {
+      background-color: rgba(255, 255, 255, 0.94);
+      color: $color-text-dark;
+    }
+
+    &.no-bg {
+      background: transparent;
+      color: $color-text-primary;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
+    }
+  }
+
+  &__right-discount-badge {
+    background-color: $turquoise-main;
+    color: #060b13;
+    padding: 0.4rem 0.95rem;
+    border-radius: $radius-full;
+    font-size: $font-size-xs;
+    font-weight: 800;
+    box-shadow: 0 4px 14px rgba(0, 229, 201, 0.45);
+  }
+
+  &__offer-center-overlay {
+    position: absolute;
+    top: 53%;
+    left: 16px;
+    right: 16px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.65rem;
+    text-align: center;
+    z-index: 2;
+  }
+
+  &__center-name-en {
+    font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-weight: 800;
+    font-size: $font-size-base;
+    padding: 0.45rem 1.25rem;
+    border-radius: $radius-full;
+
+    &.has-bg {
+      background-color: rgba(255, 255, 255, 0.95);
+      color: $color-text-dark;
+    }
+
+    &.no-bg {
+      background: transparent;
+      color: $color-gold-primary;
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.95);
+    }
+  }
+
+  &__overlay-title {
+    font-weight: 700;
+    font-size: $font-size-md;
+    padding: 0.5rem 1.35rem;
+    border-radius: $radius-full;
+    max-width: 95%;
+
+    &.has-bg {
+      background-color: rgba(255, 255, 255, 0.95);
+      color: $color-text-dark;
+    }
+
+    &.no-bg {
+      background: transparent;
+      color: $color-text-primary;
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.95);
+    }
+  }
+
+  &__features-strip {
+    position: absolute;
+    bottom: 14px;
+    left: 12px;
+    right: 12px;
+    display: flex;
+    gap: 0.5rem;
     overflow-x: auto;
-    padding: 0 1.25rem 0.5rem;
-    scroll-snap-type: x proximity;
+    padding-bottom: 4px;
+    z-index: 2;
     scrollbar-width: none;
-    max-width: $breakpoint-lg;
-    margin: 0 auto;
 
     &::-webkit-scrollbar {
       display: none;
     }
   }
 
+  &__feature-pill {
+    flex-shrink: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: $color-text-dark;
+    padding: 0.45rem 1rem;
+    border-radius: $radius-full;
+    font-size: $font-size-xs;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  &__offer-outside-bottom {
+    padding: 1.25rem;
+    background-color: $color-bg-card;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  &__offer-desc {
+    color: $color-text-secondary;
+    font-size: $font-size-sm;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  &__offer-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid $color-border-subtle;
+  }
+
+  &__meta-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: $font-size-xs;
+    color: $color-text-secondary;
+  }
+
+  &__price-badge {
+    background: $color-gold-gradient;
+    color: $color-text-dark;
+    padding: 0.5rem 1rem;
+    border-radius: $radius-sm;
+    font-weight: 800;
+    font-size: $font-size-base;
+  }
+
   &__modal-backdrop {
     position: fixed;
     inset: 0;
-    z-index: 100;
-    background: rgba($color-bg-primary, 0.75);
-    -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.84);
+    z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 
   &__modal {
-    background: $color-bg-card;
-    border: 1px solid $color-border-gold;
-    border-radius: $radius-lg;
+    background: #0b1522;
+    border: 1px solid $turquoise-main;
+    border-radius: 20px;
     padding: 1.5rem;
-    max-width: 22rem;
     width: 100%;
-    text-align: center;
-
-    h3 {
-      font-size: $font-size-lg;
-      font-weight: 800;
-      color: $color-gold-light;
-      margin: 0 0 0.75rem;
-    }
-
-    p {
-      font-size: $font-size-sm;
-      color: $color-text-secondary;
-      line-height: 1.6;
-      margin: 0 0 1.25rem;
-    }
+    max-width: 440px;
 
     button {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 10px;
       border: none;
-      background: $color-gold-gradient;
-      color: $color-text-dark;
-      font-weight: 700;
-      font-size: $font-size-sm;
-      padding: 0.65rem 1.5rem;
-      border-radius: $radius-md;
+      background: $turquoise-main;
+      color: #060b13;
+      font-weight: 800;
       cursor: pointer;
     }
   }

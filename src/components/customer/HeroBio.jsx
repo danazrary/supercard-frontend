@@ -1,6 +1,6 @@
 import React from "react";
 import "./_hero-bio.scss";
-
+import Logo from "../../assets/images/logo/logo-only-nobg.png";
 const STATS = [
   { value: "FIB", label: "پاراستنی کوالێتی" },
   { value: "100%", label: "خزمەتگوزاری خۆڕایی" },
@@ -17,7 +17,9 @@ const HeroBio = () => {
       </div>
 
       <div className="sc-hero__logo">
-        <span className="sc-hero__logo-letter">S</span>
+  
+          <img src={Logo} alt="Super Card Logo" className="sc-hero__logo-img" />
+     
       </div>
 
       <h1 className="sc-hero__title">SUPER CARD</h1>

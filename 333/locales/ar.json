@@ -1,0 +1,150 @@
+{
+  "common": {
+    "appName": "سوبر كارد",
+    "loading": "جاري التحميل...",
+    "submit": "إرسال",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "close": "إغلاق",
+    "back": "رجوع",
+    "next": "التالي",
+    "save": "حفظ",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "search": "بحث",
+    "yes": "نعم",
+    "no": "لا",
+    "error": "حدث خطأ",
+    "success": "تمت بنجاح",
+    "retry": "إعادة المحاولة",
+    "copy": "نسخ",
+    "copied": "تم النسخ!"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "profile": "الملف الشخصي",
+    "settings": "الإعدادات",
+    "buyCard": "شراء البطاقة",
+    "logout": "تسجيل الخروج"
+  },
+  "home": {
+    "heroTitle": "سوبر كارد",
+    "heroSubtitle": "بطاقة VIP لخدمات حصرية وجوائز فورية",
+    "priceLabel": "فقط مقابل",
+    "ctaButton": "اشترِ الآن",
+    "offersTitle": "العروض الخاصة",
+    "giftBoxTeaser": "كل عملية شراء تضمن جائزة فورية!",
+    "howItWorksTitle": "كيف تعمل؟",
+    "step1": "اشترِ بطاقتك",
+    "step2": "افتح صندوق الهدايا",
+    "step3": "احصل على جائزتك الفورية",
+    "step4": "استخدمها في المراكز"
+  },
+  "offer": {
+    "freeService": "خدمة مجانية",
+    "discountUpTo": "خصم يصل إلى",
+    "viewDetails": "عرض التفاصيل",
+    "location": "الموقع",
+    "terms": "الشروط",
+    "contactWhatsapp": "تواصل عبر واتساب",
+    "category": "الفئة"
+  },
+  "auth": {
+    "phoneLabel": "رقم الهاتف",
+    "phonePlaceholder": "٠٧٥٠ ١٢٣ ٤٥٦٧",
+    "sendOtp": "إرسال رمز التحقق",
+    "otpLabel": "رمز التحقق",
+    "otpSentTo": "تم إرسال الرمز إلى",
+    "verifyOtp": "تحقق",
+    "resendOtp": "إعادة إرسال الرمز",
+    "resendIn": "إعادة الإرسال خلال",
+    "invalidPhone": "يرجى إدخال رقم صحيح",
+    "invalidOtp": "الرمز غير صحيح",
+    "loginSuccess": "تم تسجيل الدخول بنجاح"
+  },
+  "payment": {
+    "payWithFib": "الدفع عبر FIB",
+    "scanQr": "امسح رمز QR",
+    "openFibApp": "فتح تطبيق FIB",
+    "waitingPayment": "في انتظار الدفع...",
+    "paymentSuccess": "تم الدفع بنجاح",
+    "paymentFailed": "فشلت عملية الدفع",
+    "paymentExpired": "انتهت مهلة الدفع",
+    "tryAgain": "حاول مرة أخرى",
+    "amountToPay": "المبلغ المطلوب",
+    "invoiceId": "رقم الفاتورة",
+    "backToHome": "العودة إلى الرئيسية"
+  },
+  "giftBox": {
+    "title": "صندوق C-BOX",
+    "subtitle": "صندوق فاخر بانتظار هديتك الخاصة",
+    "tapToOpen": "اضغط للفتح",
+    "shaking": "الصندوق يهتز...",
+    "revealing": "جاري الكشف...",
+    "congrats": "مبروك!",
+    "youWon": "لقد ربحت",
+    "claimPrize": "استلام الجائزة",
+    "prizeClaimed": "تم استلام الجائزة"
+  },
+  "profile": {
+    "title": "ملفي الشخصي",
+    "myCard": "بطاقتي",
+    "activeStatus": "نشطة",
+    "inactiveStatus": "غير نشطة",
+    "remainingPerks": "الخدمات المتبقية",
+    "usedPerks": "مستخدمة",
+    "cardCode": "رمز البطاقة",
+    "giftBoxButton": "فتح صندوق الهدايا"
+  },
+  "settings": {
+    "title": "الإعدادات",
+    "accountInfo": "معلومات الحساب",
+    "name": "الاسم",
+    "phone": "رقم الهاتف",
+    "language": "اللغة",
+    "security": "الأمان",
+    "logoutConfirm": "هل أنت متأكد من تسجيل الخروج؟"
+  },
+  "merchant": {
+    "loginTitle": "دخول المركز",
+    "username": "اسم المستخدم",
+    "password": "كلمة المرور",
+    "scannerTitle": "ماسح QR",
+    "scanInstructions": "ضع رمز QR الخاص بالعميل داخل الإطار",
+    "manualEntry": "إدخال يدوي",
+    "cardValid": "البطاقة نشطة والخدمة متوفرة",
+    "cardUsed": "تم استخدام هذه الخدمة مسبقًا",
+    "cardInvalid": "البطاقة غير صالحة",
+    "confirmUsed": "تم استخدام البطاقة",
+    "confirmNotUsed": "لم تُستخدم",
+    "redemptionSuccess": "تم التسجيل بنجاح"
+  },
+  "admin": {
+    "loginTitle": "دخول المسؤول",
+    "dashboardTitle": "لوحة التحكم العامة",
+    "offersTab": "العروض",
+    "centersTab": "المراكز",
+    "prizesTab": "الجوائز",
+    "addNew": "إضافة جديد",
+    "offerTitle": "عنوان العرض",
+    "offerImage": "صورة العرض (٩:١٦)",
+    "centerName": "اسم المركز",
+    "centerStatus": "الحالة",
+    "prizeStock": "الكمية المتبقية",
+    "prizeWeight": "وزن الاحتمالية",
+    "activate": "تفعيل",
+    "deactivate": "تعطيل"
+  },
+  "errors": {
+    "network": "حدثت مشكلة في الاتصال",
+    "unauthorized": "ليس لديك صلاحية الوصول",
+    "notFound": "غير موجود",
+    "serverError": "خطأ في الخادم",
+    "genericError": "حدث خطأ، يرجى المحاولة مرة أخرى"
+  },
+  "notFound": {
+    "title": "٤٠٤ - الصفحة غير موجودة",
+    "message": "هذا العنوان غير موجود.",
+    "backHome": "العودة إلى الصفحة الرئيسية"
+  }
+}

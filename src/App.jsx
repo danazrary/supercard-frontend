@@ -43,7 +43,7 @@ import MerchantLogin from "./pages/MerchantLogin";
 import MerchantScanner from "./pages/MerchantScanner";
 import AdminDashboard from "./pages/AdminDashboard";
 import NotFoundPage from "./pages/NotFoundPage";
-
+import BoxDetailPage from "./pages/BoxDetailPage";
 // -------------------------------------------------------------
 // شریتی تاقیکردنەوەی خێرا (Dev Navigation Switcher)
 // -------------------------------------------------------------
@@ -60,6 +60,7 @@ const DevNavSwitcher = () => {
     { name: "سکانەری سەنتەرەکان", path: "/merchant/scanner" },
     { name: "چوونەژوورەوەی ئادمین", path: "/admin/login" },
     { name: "ئادمین: بەڕێوەبردنی ئۆفەر", path: "/admin/offers" },
+    { name: " ئادمین: لیستی بەڕێوەبردنەکان", path: "/admin/offers-list" },
     { name: "ئادمین: سەنتەرەکان", path: "/admin/centers" },
     { name: "ئادمین: خەڵاتەکان", path: "/admin/prizes" },
   ];
@@ -189,7 +190,7 @@ function AppContent() {
           <Route path="/payment/callback" element={<PaymentCallback />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/settings" element={<SettingsPage />} />
-
+          <Route path="/box/:boxId" element={<BoxDetailPage />} />
           {/* ۲. بەشی سەنتەرەکان (Merchant Routes) */}
           <Route path="/merchant/login" element={<MerchantLogin />} />
           <Route
@@ -216,6 +217,14 @@ function AppContent() {
             element={
               <ProtectedRoute allowedRoles={["admin"]}>
                 <AdminDashboard defaultTab="OFFERS" />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/offers-list"
+            element={
+              <ProtectedRoute allowedRoles={["admin"]}>
+                <AdminDashboard defaultTab="OFFERS-LIST" />
               </ProtectedRoute>
             }
           />

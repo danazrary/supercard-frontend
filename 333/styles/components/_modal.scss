@@ -1,0 +1,108 @@
+/**
+ * ============================================================================
+ * File: src/styles/components/_modal.scss
+ * Description: Glassmorphic backdrop overlay and animated modal container
+ *              shared by AuthBuyModal, FibPaymentModal, OfferDetailModal,
+ *              and GiftBoxModal. Provides a consistent entrance animation,
+ *              scroll-locking body, and responsive full-screen-on-mobile
+ *              behavior for taller content.
+ * Usage / Imported By: components/common/Modal/Modal.jsx
+ * ============================================================================
+ */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: $color-bg-overlay;
+  backdrop-filter: blur($blur-sm);
+  -webkit-backdrop-filter: blur($blur-sm);
+  z-index: $z-index-modal-backdrop;
+  @include flex-center;
+  padding: $spacing-md;
+  animation: fade-in $transition-normal;
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: $modal-max-width;
+  max-height: 90vh;
+  overflow-y: auto;
+  @include custom-scrollbar;
+  background: $color-bg-card;
+  border: 1px solid $color-border-subtle;
+  border-radius: $border-radius-xl;
+  box-shadow: $shadow-elevation-modal;
+  z-index: $z-index-modal;
+  animation: modal-scale-in $transition-normal;
+
+  &__header {
+    @include flex-between;
+    padding: $spacing-lg;
+    border-bottom: 1px solid $color-border-subtle;
+    position: sticky;
+    top: 0;
+    background: $color-bg-card;
+    z-index: $z-index-elevated;
+  }
+
+  &__title {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+  }
+
+  &__close {
+    @include flex-center;
+    width: 36px;
+    height: 36px;
+    border-radius: $radius-full;
+    background: rgba($color-white, 0.06);
+    color: $color-text-secondary;
+    transition: background $transition-fast;
+    flex-shrink: 0;
+
+    &:hover {
+      background: rgba($color-white, 0.12);
+      color: $color-text-primary;
+    }
+  }
+
+  &__body {
+    padding: $spacing-lg;
+  }
+
+  &__footer {
+    padding: $spacing-lg;
+    border-top: 1px solid $color-border-subtle;
+    display: flex;
+    gap: $spacing-md;
+  }
+
+  // Variant used for GiftBoxModal: no padding, no header border — content
+  // controls its own full-bleed dark luxury presentation.
+  &--bare {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    max-width: 420px;
+  }
+
+  @include respond-below-md {
+    &--sheet {
+      max-height: 94vh;
+      border-radius: $border-radius-xl $border-radius-xl 0 0;
+      align-self: flex-end;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.modal-backdrop--sheet {
+  align-items: flex-end;
+  padding: 0;
+}
+
+body.modal-open {
+  overflow: hidden;
+}

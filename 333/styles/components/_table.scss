@@ -1,0 +1,114 @@
+/**
+ * ============================================================================
+ * File: src/styles/components/_table.scss
+ * Description: Responsive dark-themed data table for the Admin CMS
+ *              (CenterManagerTable, PrizeEnginePanel inventory grid).
+ *              Horizontally scrollable on narrow viewports rather than
+ *              collapsing to cards, preserving column alignment for
+ *              numeric/stock fields.
+ * Usage / Imported By: components/admin/CenterManagerTable.jsx,
+ *                       components/admin/PrizeEnginePanel.jsx
+ * ============================================================================
+ */
+
+.data-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  @include custom-scrollbar;
+  border-radius: $border-radius-lg;
+  border: 1px solid $color-border-subtle;
+}
+
+.data-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  background: $color-bg-card;
+
+  thead {
+    background: $color-bg-secondary;
+  }
+
+  th {
+    text-align: right;
+    padding: $spacing-md;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+    color: $color-text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  td {
+    padding: $spacing-md;
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    border-top: 1px solid $color-border-subtle;
+    white-space: nowrap;
+  }
+
+  tbody tr {
+    transition: background $transition-fast;
+
+    &:hover {
+      background: rgba($color-white, 0.02);
+    }
+  }
+
+  &__cell-primary {
+    color: $color-text-primary;
+    font-weight: $font-weight-medium;
+  }
+
+  &__cell-actions {
+    display: flex;
+    gap: $spacing-sm;
+    justify-content: flex-end;
+  }
+
+  &__empty {
+    text-align: center;
+    padding: $spacing-2xl;
+    color: $color-text-muted;
+  }
+}
+
+// Admin tabbed shell (Offers / Centers / Prizes switcher)
+.admin-tabs {
+  display: flex;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-lg;
+  border-bottom: 1px solid $color-border-subtle;
+  overflow-x: auto;
+  @include custom-scrollbar;
+
+  &__tab {
+    padding: $spacing-md $spacing-lg;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $color-text-muted;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: color $transition-fast, border-color $transition-fast;
+
+    &--active {
+      color: $color-gold-primary;
+      border-bottom-color: $color-gold-primary;
+    }
+
+    &:hover:not(&--active) {
+      color: $color-text-secondary;
+    }
+  }
+}
+
+.admin-shell {
+  max-width: $container-max-admin;
+  margin: 0 auto;
+  padding: $spacing-xl $spacing-lg;
+
+  @include respond-below-md {
+    padding: $spacing-lg $spacing-md;
+  }
+}

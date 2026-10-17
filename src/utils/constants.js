@@ -6,7 +6,7 @@
  * Usage / Imported By: All services, payment hooks, auth context, UI components.
  * ============================================================================
  */
-
+const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
 export const APP_CONFIG = {
   NAME: "Super Card",
   NAME_KU: "سوپەر کارت",
@@ -32,8 +32,8 @@ export const CONTACT_INFO = {
 };
 
 export const API_ROUTES = {
-  BASE_URL:
-    import.meta.env.REACT_APP_API_URL || "https://api.supercard.krd/api/v1",
+  BASE_URL: BASE_URL,
+
   AUTH: {
     REQUEST_OTP: "/auth/customer/otp-request",
     VERIFY_OTP: "/auth/customer/otp-verify",

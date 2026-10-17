@@ -1,0 +1,88 @@
+/**
+ * ============================================================================
+ * File: src/styles/layout/_navigation.scss
+ * Description: Glassmorphic floating mobile bottom navigation bar with a
+ *              prominent central "کڕینی کارت" (Buy Card) action trigger
+ *              that sits elevated above the bar line, plus standard
+ *              nav-item states (active/inactive) for Home/Profile/Settings.
+ * Usage / Imported By: components/layout/BottomNav.jsx
+ * ============================================================================
+ */
+
+.bottom-nav {
+  position: fixed;
+  bottom: $spacing-md;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - #{$spacing-md * 2});
+  max-width: $nav-bar-max-width;
+  height: $nav-bar-height;
+  z-index: $z-index-bottom-nav;
+  @include glassmorphism(0.85, $blur-lg);
+  border-radius: $radius-full;
+  box-shadow: $shadow-elevation-dropdown;
+  @include flex-between;
+  padding: 0 $spacing-lg;
+
+  &__item {
+    @include flex-center;
+    flex-direction: column;
+    gap: 2px;
+    color: $color-text-muted;
+    transition: color $transition-fast;
+    flex: 1;
+    position: relative;
+
+    &--active {
+      color: $color-accent-cyan;
+    }
+
+    &:hover:not(&--active) {
+      color: $color-text-secondary;
+    }
+  }
+
+  &__icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  &__label {
+    font-size: $font-size-xs;
+    font-weight: $font-weight-medium;
+  }
+
+  &__cta {
+    @include flex-center;
+    position: relative;
+    top: -22px;
+    width: 56px;
+    height: 56px;
+    border-radius: $radius-full;
+    @include gold-surface-gradient;
+    box-shadow: $shadow-gold-action-btn;
+    flex-shrink: 0;
+    transition: transform $transition-fast, box-shadow $transition-fast;
+
+    &:hover {
+      transform: translateY(-2px) scale(1.04);
+      box-shadow: $shadow-gold-btn-hover;
+    }
+
+    &__icon {
+      width: 26px;
+      height: 26px;
+      color: $color-text-dark;
+    }
+  }
+
+  @include respond-md {
+    max-width: 420px;
+  }
+}
+
+// Reserve bottom space in scrollable page containers so content never
+// sits hidden behind the floating nav bar.
+.page-with-bottom-nav {
+  padding-bottom: calc(#{$nav-bar-height} + #{$spacing-xl});
+}

@@ -1,0 +1,83 @@
+/**
+ * ============================================================================
+ * File: src/styles/components/_badge.scss
+ * Description: Pill-shaped category badges and percentage discount badges
+ *              displayed on offer cards, plus status badges (active/inactive,
+ *              redeemed/available) used in merchant and admin tables.
+ * Usage / Imported By: components/common/Badge/Badge.jsx
+ * ============================================================================
+ */
+
+.badge {
+  @include flex-center;
+  display: inline-flex;
+  gap: $spacing-xs;
+  padding: $spacing-xs $spacing-md;
+  border-radius: $radius-full;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  white-space: nowrap;
+  width: fit-content;
+
+  // --- Free service badge (cyan) ---
+  &--free {
+    background: rgba($color-accent-cyan, 0.15);
+    color: $color-accent-cyan;
+    border: 1px solid $color-border-cyan;
+  }
+
+  // --- Discount percentage badge (gold) ---
+  &--discount {
+    background: rgba($color-gold-primary, 0.15);
+    color: $color-gold-primary;
+    border: 1px solid $color-border-gold;
+  }
+
+  // --- Category pill (neutral) ---
+  &--category {
+    background: rgba($color-white, 0.06);
+    color: $color-text-secondary;
+    border: 1px solid $color-border-subtle;
+  }
+
+  // --- Status: success/active/available ---
+  &--success {
+    background: $color-success-bg;
+    color: $color-success;
+    border: 1px solid rgba($color-success, 0.3);
+  }
+
+  // --- Status: error/inactive/redeemed ---
+  &--error {
+    background: $color-error-bg;
+    color: $color-error;
+    border: 1px solid rgba($color-error, 0.3);
+  }
+
+  // --- Status: warning/pending/low-stock ---
+  &--warning {
+    background: $color-warning-bg;
+    color: $color-warning;
+    border: 1px solid rgba($color-warning, 0.3);
+  }
+
+  // --- Status: info ---
+  &--info {
+    background: $color-info-bg;
+    color: $color-info;
+    border: 1px solid rgba($color-info, 0.3);
+  }
+
+  &__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: $radius-full;
+    background: currentColor;
+    flex-shrink: 0;
+  }
+
+  &--lg {
+    padding: $spacing-sm $spacing-lg;
+    font-size: $font-size-sm;
+  }
+}
